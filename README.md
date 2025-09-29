@@ -1,2 +1,6 @@
-# forge-runner
-A test runner for Foundry projects.
+# Solidity runner
+A test runner for Solidity projects.
+
+## Features
+
+TBD

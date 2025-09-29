@@ -1,0 +1,7 @@
+[profile.default]
+# Do not cancel the test run on the first failure.
+fail-fast = false
+global-timeout = "2h"
+
+[profile.default.junit]
+path = "junit.xml"
