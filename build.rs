@@ -54,7 +54,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if let Some(env) = p.env {
             writeln!(f, "[env]")?;
             for (k, v) in env {
-                writeln!(f, "{k} = {v}")?;
+                writeln!(f, "{k} = \"{v}\"")?;
             }
         }
     }

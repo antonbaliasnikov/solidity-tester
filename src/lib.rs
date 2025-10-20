@@ -1,5 +1,6 @@
 //! Reusable library for building and testing smart contract projects.
 
+pub mod cast;
 pub mod constants;
 pub mod forge;
 pub mod git;

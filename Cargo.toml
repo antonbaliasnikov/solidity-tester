@@ -24,6 +24,8 @@ which = "8.0.0"
 tabled = "0.20.0"
 rayon = "1.10"
 config = { version = "0.15.15", features = ["toml"] }
+once_cell = "1.21.3"
+fs2 = "0.4.3"
 
 [dev-dependencies]
 rstest = "0.26.1"

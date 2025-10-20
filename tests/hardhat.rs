@@ -3,6 +3,7 @@
 //! with persistent clones and hard reset between runs.
 
 use rstest::rstest;
+use solidity_tester::cast;
 use solidity_tester::constants;
 use solidity_tester::hardhat;
 use solidity_tester::{git, io_ext, project::Project};
@@ -33,17 +34,22 @@ fn hardhat_test(#[files("tests/_gen/hardhat/*.toml")] path: PathBuf) -> anyhow::
     // Install required JS deps if any
     hardhat::install(&project)?;
 
+    // Create an unique wallet and fund it
+    let wallet = cast::create_account()?;
+    cast::fund_account(&wallet.address, constants::DEFAULT_BALANCE)?;
+    cast::check_balance(&wallet.address)?;
+
     // Clean-up project (if needed)
-    hardhat::clean(&project)?;
+    hardhat::clean(&project, &wallet)?;
 
     // Compile hardhat project
-    hardhat::compile(&project)?;
+    hardhat::compile(&project, &wallet)?;
 
     // Deploy hardhat project
-    hardhat::deploy(&project)?;
+    hardhat::deploy(&project, &wallet)?;
 
     // Run hardhat tests
-    hardhat::test(&project)?;
+    hardhat::test(&project, &wallet)?;
 
     // Clean-up repository
     io_ext::delete_dir(&repo_dir)?;
