@@ -8,7 +8,7 @@ pub const DEFAULT_PROJECT_MANAGER: &str = "npm";
 pub const NETWORK_NAME: &str = "ZKsyncOS";
 
 // Default ZKsync OS chain ID for Solidity projects
-pub const CHAIN_ID: &str = "270";
+pub const CHAIN_ID: &str = "6565";
 
 // Default ZKsync OS RPC URL for Solidity projects
 pub const RPC_URL: &str = "http://localhost:3050";
