@@ -12,8 +12,3 @@ description = "Hardhat v3 ethers-based simple Counter project."
 repo = "https://github.com/antonbaliasnikov/UniswapV4Hardhat"
 toolchain = "hardhat"
 description = "Uniswap V4 Hardhat test project."
-
-[olympus]
-repo = "https://github.com/antonbaliasnikov/olympus-contracts"
-toolchain = "hardhat"
-description = "OlympusDAO Hardhat test project."
